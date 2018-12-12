@@ -8,7 +8,6 @@ namespace ChatAppReact.Services
     public class ChatMessageRepository : IChatMessageRepository
     {
         public static List<ChatMessage> ChatMessages = new List<ChatMessage>();
-        public static List<UserDetails> UserDetails = new List<UserDetails>();
 
         public ChatMessageRepository(IConfiguration configuration)
         {

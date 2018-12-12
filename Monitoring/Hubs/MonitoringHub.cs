@@ -14,10 +14,14 @@ namespace Monitoring.Hubs
             _monitoringService = monitoringService;
         }
 
+        public void UserConnected(string username)
+        {
+            var id = Context.ConnectionId;
+        }
 
         public void Data()
         {
-            Clients.All.SendAsync("NewData", "Some data");
+            Clients.All.SendAsync("newInformation", "Some data");
         }
 
         public override Task OnConnectedAsync()

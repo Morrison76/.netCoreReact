@@ -10,6 +10,8 @@ export class Register extends Component {
 			name: ''
 		};
 
+        console.log("Register");
+
 		this.onSubmit = this.onSubmit.bind(this);
 	}
 
@@ -25,14 +27,13 @@ export class Register extends Component {
 			.then(this.onSuccess)
 			.catch(function (error) {
 				console.log(error);
-				//Update UI with appropriate labels...
 				alert("Username already exists");
 			});
 	}
 
 	onSuccess = (response) => {
-		window.Username = this.state.name;
-		this.props.history.push('/chatScreen');
+        window.Username = this.state.name;
+        this.props.history.push('/chatScreen');
 	};
 
 	render() {

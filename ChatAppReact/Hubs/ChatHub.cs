@@ -6,9 +6,6 @@ using System.Threading.Tasks;
 
 namespace ChatAppReact.Hubs
 {
-	/// <summary>
-	/// SignalR Hub class to enable socket communication and perform respective actions
-	/// </summary>
 	public class ChatHub : Hub
 	{
 		private readonly IChatService _chatService;

@@ -7,8 +7,9 @@ export class ChatService {
 	constructor(websocketService, messageAdded) {
 		this._messageAdded = messageAdded;
 		this._websocketService = websocketService;
-		// Chat-Nachrichten vom Server empfangen
-		this._websocketService.registerMessageAdded((message) => {
+
+
+        this._websocketService.registerMessageAdded((message) => {
 			this._messageAdded(message);
 		});
 	}

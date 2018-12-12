@@ -25,35 +25,30 @@ export class Register extends Component {
 			.then(this.onSuccess)
 			.catch(function (error) {
 				console.log(error);
-
-                alert("Username already exists");
+				//Update UI with appropriate labels...
+				alert("Username already exists");
 			});
 	}
 
 	onSuccess = (response) => {
 		window.Username = this.state.name;
 		this.props.history.push('/chatScreen');
-    };
-
-
-    createSelectItems() {
-        let items = ['Невідомий єдиноріг', 'Невідомий пес', 'Невідомий кіт', 'Невідомий єнот', 'Невідома змія', 'Невідомий хом"як', 'Невідомий їжак', 'Невідомий борсук', 'Невідома жирафа', 'Невідомий леопард', 'Невідомий кріт'];
-        for (let i = 0; i <= 10; i++) {
-            items.push(<option key={items[i]} value={items[i]}>{items[i]}</option>);
-        }
-        return items;
-    } 
+	};
 
 	render() {
 		return <div className='panel panel-default'>
 			<div className='panel-body'>
+
 				<form className='register-form'>
 					<label>
 						Name:
 					</label>
-                    <select label="Select">
-                        {this.createSelectItems()}
-                    </select>
+					<input type='text'
+						value={this.state.name}
+						onChange={this.onChange}
+						className='form-control'
+						id='name'
+						placeholder='Your Name' />
 					<button onClick={this.onSubmit}>Send</button >
 				</form>
 			</div>

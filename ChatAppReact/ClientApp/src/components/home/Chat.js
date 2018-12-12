@@ -26,7 +26,6 @@ export class Chat extends Component {
 
 		this.handleOnInitialMessagesFetched = this.handleOnInitialMessagesFetched.bind(this);
 		this.handlePanelRef = this.handlePanelRef.bind(this);
-		//this.handleMessageRef = this.handleMessageRef.bind(this);
 		this.handleMessageChange = this.handleMessageChange.bind(this);
 		this.onSubmit = this.onSubmit.bind(this);
 
@@ -35,10 +34,6 @@ export class Chat extends Component {
 
 	handlePanelRef = (div) => {
 		this.panel = div;
-	};
-
-	handleMessageRef = (input) => {
-		this.msg = input;
 	};
 
 	handleOnInitialMessagesFetched(messages) {
